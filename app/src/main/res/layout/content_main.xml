@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:id="@+id/txt_contador_pulsaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Contador:" />
+
+    <!-- Botón del centro -->
+    <Button
+        android:id="@+id/btn_resetear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Resetear"
+        android:onClick="resetear_contador"
+        />
+
+    <!-- Botón superior -->
+    <Button
+        android:id="@+id/btn_incrementar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_resetear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="Incrementar"
+        android:onClick="incrementar_contador"
+        />
+
+    <!-- Botón inferior -->
+    <Button
+        android:id="@+id/btn_decrementar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_resetear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Decrementar"
+        android:onClick="decrementar_contador"
+        />
+</RelativeLayout>
