@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Resetear"
-        android:onClick="resetear_contador"
         />
 
     <!-- Botón superior -->
@@ -35,7 +34,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:text="Incrementar"
-        android:onClick="incrementar_contador"
         />
 
     <!-- Botón inferior -->
@@ -47,6 +45,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Decrementar"
-        android:onClick="decrementar_contador"
         />
 </RelativeLayout>

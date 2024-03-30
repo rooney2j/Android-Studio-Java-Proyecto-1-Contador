@@ -2,10 +2,12 @@ package pe.ronnie.contador;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import pe.ronnie.contador.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity {
 
@@ -15,9 +17,37 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        setContentView(binding.getRoot());
 
         contador = 0;
+
+        Button btn_incrementar = findViewById(R.id.btn_incrementar);
+        Button btn_resetear = findViewById(R.id.btn_resetear);
+        Button btn_decrementar = findViewById(R.id.btn_decrementar);
+
+        btn_incrementar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                incrementar_contador(view);
+            }
+        });
+
+        btn_resetear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetear_contador(view);
+            }
+        });
+
+        btn_decrementar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                decrementar_contador(view);
+            }
+        });
+
     }
 
     public void incrementar_contador(View vista) {
@@ -31,6 +61,9 @@ public class MainActivity extends Activity {
             contador--;
 
             mostrar_resultado();
+        }
+        else {
+            Toast.makeText(MainActivity.this, "No existen pulsaciones negativas", Toast.LENGTH_SHORT).show();
         }
     }
 
